@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Munna Tiwari Library</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <h2>Munna Tiwari Library</h2>
+    <ul>
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#facilities">Facilities</a></li>
+      <li><a href="#announcements">Announcements</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#location">Location</a></li>
+      <li><a href="#contact-payment">Contact & Fee</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section id="hero" class="hero">
+    <div class="hero-text">
+      <h1>Welcome to Munna Tiwari Library</h1>
+      <p>A modern space for knowledge, peace & learning</p>
+    </div>
+  </section>
+
+  <!-- Facilities -->
+  <section id="facilities">
+    <h2>Our Facilities</h2>
+    <div class="facilities">
+      <div class="facility-card">
+        <h3>🚻 Separate Washrooms</h3>
+        <p>Clean and hygienic washrooms for Boys & Girls.</p>
+      </div>
+      <div class="facility-card">
+        <h3>📹 Security Cameras</h3>
+        <p>24×7 CCTV monitoring for complete safety.</p>
+      </div>
+      <div class="facility-card">
+        <h3>💧 RO Water</h3>
+        <p>Purified drinking water available for all.</p>
+      </div>
+      <div class="facility-card">
+        <h3>💻 Free Wi-Fi</h3>
+        <p>High-speed internet for research & learning.</p>
+      </div>
+      <div class="facility-card">
+        <h3>❄️ Air-Conditioned</h3>
+        <p>Cool, calm environment for better focus.</p>
+      </div>
+      <div class="facility-card">
+        <h3>🔋 24/7 Power Backup</h3>
+        <p>Uninterrupted study experience.</p>
+      </div>
+      <div class="facility-card">
+        <h3>📚 Digital Library</h3>
+        <p>Access to e-books, journals & resources.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Announcements -->
+  <section id="announcements">
+    <h2>Announcements</h2>
+    <div class="announcement-box">
+      <p><strong>Notice:</strong> Monthly fee submission deadline is 5th of every month.</p>
+      <p><strong>Update:</strong> Library will remain closed on National Holidays Only.</p>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <!-- apni images/paths set karein -->
+      <img src="C:\Users\yours\OneDrive\Desktop\munna-tiwari-library\ChatGPT Image Aug 19, 2025, 12_16_54 PM.png" alt="Library Image 1">
+      <img src="C:\Users\yours\OneDrive\Desktop\munna-tiwari-library\ChatGPT Image Aug 17, 2025, 06_17_44 PM.png" alt="Library Image 2">
+      <img src="C:\Users\yours\OneDrive\Desktop\munna-tiwari-library\download.jpeg" alt="Library Image 3">
+    </div>
+  </section>
+
+  <!-- Location -->
+  <section id="location">
+    <h2>Find Us</h2>
+    <div class="location-wrapper">
+      <!-- Map (left) -->
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d452.3485995176971!2d84.1771659713262!3d24.905184845602058!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1755583853217!5m2!1sen!2sin"
+          width="100%" height="280" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+
+      <!-- Address (right) -->
+      <div class="address-box">
+        <h3>Library Address</h3>
+        <p>📌 ********************<br/>Dehri, Bihar — 821307</p>
+        <p>☎️ +91 6206191***</p>
+        <p>✉️ **tiwari***@gmail.com</p>
+        <p>⏰ Time: 8:00 AM – 8:00 PM</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact + Payment -->
+  <section id="contact-payment">
+    <h2>Contact & Fee Submission</h2>
+    <div class="contact-payment-container">
+
+      <!-- Query Form -->
+      <div class="query-form">
+        <h3>Send Us Your Query</h3>
+        <!-- Formspree: https://formspree.io  -> apna form ID replace karein -->
+        <form action="https://formspree.io/f/yourFormID" method="POST">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <input type="tel" name="phone" placeholder="Your Phone" required>
+          <textarea name="message" rows="5" placeholder="Your Query"></textarea>
+          <button type="submit">Send Query</button>
+        </form>
+      </div>
+
+      <!-- Payment Box -->
+      <div class="payment-box">
+        <h3>Deposit Library Fee</h3>
+        <p>Pay securely using Razorpay:</p>
+
+        <div class="amount-row">
+          <label for="amount">Amount (₹)</label>
+          <input id="amount" type="number" min="1" step="1" value="500">
+        </div>
+
+        <button id="rzp-button1">Pay Now</button>
+
+        <p class="note">After successful payment, you’ll receive a payment ID on screen.
+          Keep it for reference.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Munna Tiwari Library | All Rights Reserved</p>
+  </footer>
+
+  <!-- Razorpay -->
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script>
+    // Helper: convert ₹ to paise & open Razorpay
+    function openRazorpay(amountInRupees) {
+      const options = {
+        key: "rzp_test_yourKeyHere",     // ← apna Razorpay Key ID
+        amount: (amountInRupees * 100).toString(), // paise
+        currency: "INR",
+        name: "Munna Tiwari Library",
+        description: "Library Fee Payment",
+        image: "images/logo.png",        // optional
+        handler: function (response) {
+          alert("Payment Successful!\\nPayment ID: " + response.razorpay_payment_id);
+        },
+        prefill: {
+          name: "",
+          email: "",
+          contact: ""
+        },
+        theme: { color: "#2563eb" }
+      };
+      const rzp = new Razorpay(options);
+      rzp.open();
+    }
+
+    document.getElementById("rzp-button1").addEventListener("click", function (e) {
+      e.preventDefault();
+      const amt = parseInt(document.getElementById("amount").value || "0", 10);
+      if (!amt || amt <= 0) {
+        alert("Please enter a valid amount.");
+        return;
+      }
+      openRazorpay(amt);
+    });
+  </script>
+</body>
+</html>
